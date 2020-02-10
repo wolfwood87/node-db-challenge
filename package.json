@@ -1,0 +1,24 @@
+{
+  "name": "db-challenge",
+  "version": "1.0.0",
+  "description": "sprint db-challenge",
+  "main": "index.js",
+  "scripts": {
+    "server": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wolfwood87/node-db-challenge.git"
+  },
+  "author": "Derek Glynn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wolfwood87/node-db-challenge/issues"
+  },
+  "homepage": "https://github.com/wolfwood87/node-db-challenge#readme",
+  "dependencies": {
+    "knex": "^0.20.9",
+    "knex-cleaner": "^1.3.0",
+    "sqlite3": "^4.1.1"
+  }
+}
