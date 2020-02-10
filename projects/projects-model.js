@@ -11,6 +11,7 @@ function add(project) {
     return db('projects').insert(project)
 }
 
+
 function findTasks(projectId) {
     return db('tasks as t')
         .join('projects as p', 'p.id', 't.project_id')
@@ -18,4 +19,13 @@ function findTasks(projectId) {
         .where('project_id', projectId)
 }
 
-module.exports = {find, add, findTasks};
+function findById(id) {
+    return db('projects-resources as pr')
+        .join('projects as p', 'p.id', 'pr.project_id')
+        .join('tasks as t', 't.project_id', 'pr.project_id')
+        .join('resources as r', 'r.id', 'pr.resource_id')
+        .select('p.*', 't.*', 'r.*')
+        .where('project_id', id)
+}
+
+module.exports = {find, add, findById, findTasks};

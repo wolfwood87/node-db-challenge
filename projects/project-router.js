@@ -27,6 +27,18 @@ router.post('/', (req, res) => {
         })
 })
 
+router.get('/:id', (req, res) => {
+    const { id } = req.params;
+
+    Projects.findById(id)
+        .then(proj => {
+            res.status(200).json(proj)
+        })
+        .catch(err => {
+            res.status(500).json({message: "Failed to retrieve project"})
+        })
+})
+
 //get and add tasks
 router.get('/:id/tasks', (req, res) => {
     const {id} = req.params
